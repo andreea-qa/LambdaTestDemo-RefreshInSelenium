@@ -37,9 +37,15 @@ namespace RefreshSelenium
             driver.Navigate().GoToUrl("https://www.lambdatest.com/selenium-playground/");
             homePage.NavigateToLink(homePage.SimpleFormLink);
             driver.Navigate().Back();
+            
+            // Refresh using Navigate Refresh
             driver.Navigate().Refresh();
-            //homePage.RadioButtonsLink.SendKeys(Keys.F5);
-            //driver.Navigate().GoToUrl(driver.Url);
+
+            // Refresh by pressing the F5 key
+            homePage.RadioButtonsLink.SendKeys(Keys.F5);
+            
+            // Refresh by using the current page Url
+            driver.Navigate().GoToUrl(driver.Url);
             homePage.NavigateToLink(homePage.RadioButtonsLink);  
         }
 
